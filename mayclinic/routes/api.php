@@ -29,6 +29,6 @@ use App\Http\Controllers\FormController;
 // Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers'], function () {
 //     Route::apiResource('pets', PetController::class);
 // });
-
-// Route::apiResource('pets', PetController::class);
-Route::apiResource('forms', FormController::class);
+Route::prefix('v1')->group(function () {
+    Route::apiResource('forms', FormController::class);
+});
